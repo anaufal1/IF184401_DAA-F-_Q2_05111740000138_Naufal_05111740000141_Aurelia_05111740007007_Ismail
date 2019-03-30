@@ -11,18 +11,18 @@
 	7,8,0
 	
 5. Type a number you want to move and hit enter
-   E.g.
-   1 2 3
-   4 5 6
-   7 0 8
-   "please type the number of the piece to move : (q) to give up and show the solver (bfs) : "
+   E.g.<br>
+   1 2 3<br>
+   4 5 6<br>
+   7 0 8<br>
+   "please type the number of the piece to move : (q) to give up and show the solver (bfs) : "<br>
        
     if you input an 8, then it will move the zero to the right, which is the number of 8.
        If you input a 5, then the zero will move up, 7 to left and etc. 
-       So when you input an 8, the puzzle will be like this :
-       1 2 3
-       4 5 6
-       7 8 0
+       So when you input an 8, the puzzle will be like this :<br>
+       1 2 3<br>
+       4 5 6<br>
+       7 8 0<br>
        
 6. Try moving as little as possible
 7. If you have given up, type 'Q' / 'q' and hit enter
