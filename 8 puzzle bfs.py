@@ -26,13 +26,6 @@ while list1 !=[]:
     matrix.append(list1[:3])
     list1 = list1[3:]
 
-def check(state):
-    if (state == goal_state):
-        print('you did it!\n')
-        sys.exit()
-    else:
-        print("saya")
-
 class Node:
 	def __init__( self, state, parent, operator, depth, cost ):
 		self.state = state
@@ -161,6 +154,8 @@ def draw_board(board):
     if(board == [[1, 2, 3], [4, 5, 6], [7, 8, 0]]):
         print('you did it!\n')
         sys.exit()
+    else:
+        print('\n')
     print('\n\t+-------+-------+-------|')
     for x in range (len(board)):
         for y in range(len(board[x])):
@@ -201,7 +196,9 @@ while game_on:
             matrix[piece[0]][piece[1]]=0
             empty_space=(piece[0],piece[1])
             move = move +1
-            print('you have made ',move , 'moves so far ')
-            print('\n')
+            print('you have made',move , 'moves so far\n')
         else:
             print('illegal move , try again ')
+
+
+
