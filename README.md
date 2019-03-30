@@ -5,12 +5,26 @@
 1. Run the py file
 2. Enter 8 digit different numbers Range={0,1,2,3,4,5,6,7,8}
 3. If the puzzle showed up then its time to start to play
-4. Solve the puzzle until the numbers arranged until : 	</br>
+4. Solve the puzzle until the numbers arranged into : 	</br>
 	1,2,3</br>
 	4,5,6</br>
 	7,8,0
 	
 5. Type a number you want to move and hit enter
+   E.g.
+       1 2 3
+       4 5 6
+       7 0 8
+       "please type the number of the piece to move : (q) to give up and show the solver (bfs) : "
+       
+       if you input an 8, then it will move the zero to the right, which is the number of 8.
+       If you input a 5, then the zero will move up, 7 to left and etc. 
+       So when you input an 8, the puzzle will be like this :
+       
+       1 2 3
+       4 5 6
+       7 8 0
+       
 6. Try moving as little as possible
 7. If you have given up, type 'Q' / 'q' and hit enter
 8. The solver will show you the steps using BFS algorithm
@@ -109,7 +123,7 @@ def move_up( state ):
     else:
         return None
 ```
-For moving up
+For moving up, if the index position of zero not in index state\[0], state\[1], or state\[2].
 </br></br>
 ```
 
@@ -126,7 +140,7 @@ def move_down( state ):
     else:
         return None
 ```
-For moving down
+For moving down, if the index position of zero not in index state\[6], state\[7], or state\[8].
 </br></br>
 ```
 
@@ -142,7 +156,7 @@ def move_left( state ):
     else:
         return None
 ```
-For moving left
+For moving left, if the index position of zero not in index state\[0], state\[3], or state\[6].
 </br></br>
 ```
 
@@ -158,7 +172,7 @@ def move_right( state ):
     else:
         return None
 ```
-For moving right
+For moving right, if the index position of zero not in index state\[2], state\[5], or state\[8].
 </br></br>
 ```
 
@@ -178,7 +192,7 @@ def expand_node( node, nodes ):
 	expanded_nodes = [node for node in expanded_nodes if node.state != None]
 	return expanded_nodes
 ```
-expanding nodes for bfs algorithm
+expanding nodes with bfs algorithm, by finding all possible movement of zero to left, right, up, or down until it find the goal state. Each node that expand will have state after it being move (wether up, down, right, or left), the node, a string to tell us where it moves, and the depth of the node.
 </br></br>
 ```
 
@@ -208,7 +222,8 @@ def bfs( start, goal ):
 
         nodes.extend( expand_node( node, nodes ) )
 ```
-BFS algorithm proccess
+BFS algorithm proccess, recursively extend the node by finding all possible movement of zero until find the goal state. 
+And then from the goal state that has been found, the parent state is stored in a list, and print the state from the very first move after the start state to the final state (some kind of stack which is LIFO, but with list).
 </br></br>
 ```
 
@@ -225,7 +240,7 @@ def nyerah():
         print (result)
         print (len(result), " moves")
 ```
-The solver main proccess, calling bfs algoritm proccess for solving the puzzle icluding the steps and moves.
+The solver main proccess, calling bfs algoritm proccess for solving the puzzle icluding the steps and moves found using the algorithm.
 </br></br>
 ```
 
@@ -258,6 +273,7 @@ def draw_board(board):
 ```
 In this part of code, is the proses of arranging numbers which is player entered. (Classic UI).
 And also for addressing states which will be used for algorithm
+If the current process already the goal state, it means the puzzle is solved and the program will exit.
 </br></br>
 ```
 def ask_number():
@@ -276,7 +292,7 @@ def ask_number():
                 piece = (i,j)
     return piece , num
 ```
-In this part of code, is the proses of entering numbers which is player entered.
+In this part of code, is the proses of entering numbers which is player entered as input.
 </br></br>
 ```
 
