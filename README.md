@@ -5,9 +5,9 @@
 1. Run the py file
 2. Enter 8 digit different numbers Range={0,1,2,3,4,5,6,7,8}
 3. If the puzzle showed up then its time to start to play
-4. Solve the puzzle until the numbers arranged until : 	
-	1,2,3
-	4,5,6
+4. Solve the puzzle until the numbers arranged until : 	</br>
+	1,2,3</br>
+	4,5,6</br>
 	7,8,0
 	
 5. type a number you want to move and hit enter
