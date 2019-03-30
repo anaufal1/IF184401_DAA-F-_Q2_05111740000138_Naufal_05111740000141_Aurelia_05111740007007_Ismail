@@ -43,8 +43,9 @@ while list1 !=[]:
     matrix.append(list1[:3])
     list1 = list1[3:]
 ```
-4
+creating matrix for the list(s)
 ```
+
 class Node:
 	def __init__( self, state, parent, operator, depth, cost ):
 		self.state = state
@@ -53,9 +54,10 @@ class Node:
 		self.depth = depth
 		self.cost = cost
 ```
-
-
+Using class for create Nodes which having those attributes
 ```
+
+
 def display_board( state ):
 	print ("-------------")
 	print ("| %i | %i | %i |" % (state[0], state[1], state[2]))
@@ -82,8 +84,10 @@ def move_up( state ):
     else:
         return None
 ```
-delapan
+For moving up
 ```
+
+
 def move_down( state ):
     new_state = state[:]
     index = new_state.index( 0 )
@@ -96,8 +100,9 @@ def move_down( state ):
     else:
         return None
 ```
-sembilan
+For moving down
 ```
+
 def move_left( state ):
     new_state = state[:]
     index = new_state.index( 0 )
@@ -110,8 +115,9 @@ def move_left( state ):
     else:
         return None
 ```
-sepuluh
+For moving left
 ```
+
 def move_right( state ):
     new_state = state[:]
     index = new_state.index( 0 )
@@ -124,13 +130,15 @@ def move_right( state ):
     else:
         return None
 ```
-sepuluh
+For moving right
 ```
+
 def create_node( state, parent, operator, depth, cost ):
 	return Node( state, parent, operator, depth, cost )
 ```
-sepuluh
+create node
 ```
+
 def expand_node( node, nodes ):
 	expanded_nodes = []
 	expanded_nodes.append( create_node( move_up( node.state ), node, "up", node.depth + 1, 0 ) )
@@ -140,8 +148,9 @@ def expand_node( node, nodes ):
 	expanded_nodes = [node for node in expanded_nodes if node.state != None]
 	return expanded_nodes
 ```
-sepuluh
+expanding nodes for bfs algorithm
 ```
+
 def bfs( start, goal ):
     nodes = []
     nodes.append( create_node( start, None, None, 0, 0 ) )
@@ -168,8 +177,9 @@ def bfs( start, goal ):
 
         nodes.extend( expand_node( node, nodes ) )
 ```
-sepuluh
+BFS algorithm proccess
 ```
+
 def nyerah():
     display_board(starting_state)
     result = bfs( starting_state, goal_state )
@@ -183,8 +193,9 @@ def nyerah():
         print (result)
         print (len(result), " moves")
 ```
-sepuluh
+The solver main proccess, calling bfs algoritm proccess for solving the puzzle icluding the steps and moves.
 ```
+
 def zero(board):
     global empty_space
     for x in range (len(board)):
@@ -193,8 +204,9 @@ def zero(board):
                 empty_space = (x,y)
     return empty_space
 ```
-sepuluh
+returning empty_space if the matrix is empty
 ```
+
 def draw_board(board):
     if(board == [[1, 2, 3], [4, 5, 6], [7, 8, 0]]):
         print('you did it!\n')
@@ -210,7 +222,8 @@ def draw_board(board):
                  print('\t|  ' + '{:d}' .format(board[x][y]), end=' ') 
         print('\n\t+-------+-------+-------|')
 ```
-sepuluh
+In this part of code, is the proses of arranging numbers which is player entered. (Classic UI).
+And also for addressing states which will be used for algorithm
 ```
 def ask_number():
     global num , piece 
@@ -228,8 +241,9 @@ def ask_number():
                 piece = (i,j)
     return piece , num
 ```
-sepuluh
+In this part of code, is the proses of entering numbers which is player entered.
 ```
+
 zero(matrix)
 while game_on:
     draw_board(matrix)      
@@ -250,4 +264,4 @@ while game_on:
         else:
             print('illegal move , try again ')
 ```
-terakhir
+The drawing proccess of the matrix, including the ask_number function start.
