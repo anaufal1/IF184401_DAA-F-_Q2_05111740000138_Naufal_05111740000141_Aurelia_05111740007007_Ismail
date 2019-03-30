@@ -4,10 +4,8 @@ import string
 import random
 import sys
 ```
-## First
-This is_solveable function purpose for find out the numbers you've entered is can be solved or not by this solver,
-for the algorithm we use looping for checking do the numbers from list you've entered one by one bigger from the next number or not,
-then using "AND" operation also using Modulo operation ("%2"), if there were [even]s numbers reach this condition, then this puzzle may can be solved using this solver, but if there were [odd]s numbers reach this condition, then this pizzle cannot be solved with this solver.
+
+
 
 ```
 def is_solveable():
@@ -21,9 +19,12 @@ def is_solveable():
         print("The Puzzle is not soveable")
         sys.exit()        
 ```
-## Second
-In this part, start user interaction, player must fill the numbers of puzzle by themselves.
+This is_solveable function purpose for find out the numbers you've entered is can be solved or not by this solver,
+for the algorithm we use looping for checking do the numbers from list you've entered one by one bigger from the next number or not,
+then using "AND" operation also using Modulo operation ("%2"), if there were [even]s numbers reach this condition, then this puzzle may can be solved using this solver, but if there were [odd]s numbers reach this condition, then this pizzle cannot be solved with this solver.
+
 ```
+
 game_on = True
 move = 0
 goal_state = [1, 2, 3, 4, 5, 6, 7, 8, 0]
@@ -31,15 +32,18 @@ print("Insert Start State (e.g '1 2 3 4 5 6 7 8 0')")
 list1 = [int(x) for x in input().split()]
 is_solveable()
 starting_state = list1.copy()
+
 ```
-## Ketiga
+In this part, start user interaction, player must fill the numbers of puzzle by themselves.
 ```
+
+
 matrix=[]
 while list1 !=[]:
     matrix.append(list1[:3])
     list1 = list1[3:]
 ```
-## Kelima
+4
 ```
 class Node:
 	def __init__( self, state, parent, operator, depth, cost ):
@@ -49,9 +53,8 @@ class Node:
 		self.depth = depth
 		self.cost = cost
 ```
-## Sixth
-In this part of code, is the proses of arranging numbers which is player entered. (Classic UI).
-And also for addressing states which will be used for algorithm
+
+
 ```
 def display_board( state ):
 	print ("-------------")
@@ -62,8 +65,11 @@ def display_board( state ):
 	print ("| %i | %i | %i |" % (state[6], state[7], state[8]))
 	print ("-------------\n")
 ```
-ketujuh
+In this part of code, is the proses of arranging numbers which is player entered. (Classic UI).
+And also for addressing states which will be used for algorithm
 ```
+
+
 def move_up( state ):
     new_state = state[:]
     index = new_state.index( 0 )
