@@ -11,6 +11,7 @@
 	7,8,0
 	
 5. Type a number you want to move and hit enter
+
    E.g.
        1 2 3
        4 5 6
