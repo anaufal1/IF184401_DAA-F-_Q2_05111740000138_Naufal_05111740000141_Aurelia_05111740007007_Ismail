@@ -22,7 +22,7 @@ def is_solveable():
 This is_solveable function purpose for find out the numbers you've entered is can be solved or not by this solver,
 for the algorithm we use looping for checking do the numbers from list you've entered one by one bigger from the next number or not,
 then using "AND" operation also using Modulo operation ("%2"), if there were [even]s numbers reach this condition, then this puzzle may can be solved using this solver, but if there were [odd]s numbers reach this condition, then this pizzle cannot be solved with this solver.
-<br />
+</br></br></br>
 ```
 
 game_on = True
