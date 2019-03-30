@@ -39,16 +39,6 @@ while list1 !=[]:
     matrix.append(list1[:3])
     list1 = list1[3:]
 ```
-## Fourth
-This part of code, will print a text "you did it!" if the player have done the puzzle completely
-```
-def check(state):
-    if (state == goal_state):
-        print('you did it!\n')
-        sys.exit()
-    else:
-        print("saya")
-```
 ## Kelima
 ```
 class Node:
@@ -203,6 +193,8 @@ def draw_board(board):
     if(board == [[1, 2, 3], [4, 5, 6], [7, 8, 0]]):
         print('you did it!\n')
         sys.exit()
+    else:
+        print('\n')
     print('\n\t+-------+-------+-------|')
     for x in range (len(board)):
         for y in range(len(board[x])):
