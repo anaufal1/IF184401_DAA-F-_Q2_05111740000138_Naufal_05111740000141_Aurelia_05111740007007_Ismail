@@ -1,5 +1,4 @@
 # 8 Puzzle Game
-</br></br>
 
 ### How to play
 1. Run the py file
