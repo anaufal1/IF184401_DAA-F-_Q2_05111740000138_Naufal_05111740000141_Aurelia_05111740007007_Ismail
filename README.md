@@ -4,7 +4,7 @@ import string
 import random
 import sys
 ```
-##First
+## First
 This is_solveable function purpose for find out the numbers you've entered is can be solved or not by this solver,
 for the algorithm we use looping for checking do the numbers from list you've entered one by one bigger from the next number or not,
 then using "AND" operation also using Modulo operation ("%2"), if there were [even]s numbers reach this condition, then this puzzle may can be solved using this solver, but if there were [odd]s numbers reach this condition, then this pizzle cannot be solved with this solver.
@@ -21,7 +21,7 @@ def is_solveable():
         print("The Puzzle is not soveable")
         sys.exit()        
 ```
-##Second
+## Second
 In this part, start user interaction, player must fill the numbers of puzzle by themselves.
 ```
 game_on = True
@@ -32,14 +32,14 @@ list1 = [int(x) for x in input().split()]
 is_solveable()
 starting_state = list1.copy()
 ```
-##Ketiga
+## Ketiga
 ```
 matrix=[]
 while list1 !=[]:
     matrix.append(list1[:3])
     list1 = list1[3:]
 ```
-##Fourth
+## Fourth
 This part of code, will print a text "you did it!" if the player have done the puzzle completely
 ```
 def check(state):
@@ -49,7 +49,7 @@ def check(state):
     else:
         print("saya")
 ```
-##Kelima
+## Kelima
 ```
 class Node:
 	def __init__( self, state, parent, operator, depth, cost ):
@@ -59,7 +59,7 @@ class Node:
 		self.depth = depth
 		self.cost = cost
 ```
-##Sixth
+## Sixth
 In this part of code, is the proses of arranging numbers which is player entered. (Classic UI).
 And also for addressing states which will be used for algorithm
 ```
