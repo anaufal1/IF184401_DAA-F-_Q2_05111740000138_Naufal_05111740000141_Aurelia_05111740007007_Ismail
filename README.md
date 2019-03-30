@@ -22,7 +22,7 @@ def is_solveable():
 This is_solveable function purpose for find out the numbers you've entered is can be solved or not by this solver,
 for the algorithm we use looping for checking do the numbers from list you've entered one by one bigger from the next number or not,
 then using "AND" operation also using Modulo operation ("%2"), if there were [even]s numbers reach this condition, then this puzzle may can be solved using this solver, but if there were [odd]s numbers reach this condition, then this pizzle cannot be solved with this solver.
-</br></br></br>
+</br></br></br></br>
 ```
 
 game_on = True
@@ -35,6 +35,7 @@ starting_state = list1.copy()
 
 ```
 In this part, start user interaction, player must fill the numbers of puzzle by themselves.
+</br></br></br></br>
 ```
 
 
@@ -44,6 +45,7 @@ while list1 !=[]:
     list1 = list1[3:]
 ```
 creating matrix for the list(s)
+</br></br></br></br>
 ```
 
 class Node:
@@ -55,6 +57,7 @@ class Node:
 		self.cost = cost
 ```
 Using class for create Nodes which having those attributes
+</br></br></br></br>
 ```
 
 
@@ -69,6 +72,7 @@ def display_board( state ):
 ```
 In this part of code, is the proses of arranging numbers which is player entered. (Classic UI).
 And also for addressing states which will be used for algorithm
+</br></br></br></br>
 ```
 
 
@@ -85,6 +89,7 @@ def move_up( state ):
         return None
 ```
 For moving up
+</br></br></br></br>
 ```
 
 
@@ -101,6 +106,7 @@ def move_down( state ):
         return None
 ```
 For moving down
+</br></br></br></br>
 ```
 
 def move_left( state ):
@@ -116,6 +122,7 @@ def move_left( state ):
         return None
 ```
 For moving left
+</br></br></br></br>
 ```
 
 def move_right( state ):
@@ -131,12 +138,14 @@ def move_right( state ):
         return None
 ```
 For moving right
+</br></br></br></br>
 ```
 
 def create_node( state, parent, operator, depth, cost ):
 	return Node( state, parent, operator, depth, cost )
 ```
 create node
+</br></br></br></br>
 ```
 
 def expand_node( node, nodes ):
@@ -149,6 +158,7 @@ def expand_node( node, nodes ):
 	return expanded_nodes
 ```
 expanding nodes for bfs algorithm
+</br></br></br></br>
 ```
 
 def bfs( start, goal ):
@@ -178,6 +188,7 @@ def bfs( start, goal ):
         nodes.extend( expand_node( node, nodes ) )
 ```
 BFS algorithm proccess
+</br></br></br></br>
 ```
 
 def nyerah():
@@ -194,6 +205,7 @@ def nyerah():
         print (len(result), " moves")
 ```
 The solver main proccess, calling bfs algoritm proccess for solving the puzzle icluding the steps and moves.
+</br></br></br></br>
 ```
 
 def zero(board):
@@ -205,6 +217,7 @@ def zero(board):
     return empty_space
 ```
 returning empty_space if the matrix is empty
+</br></br></br></br>
 ```
 
 def draw_board(board):
@@ -224,6 +237,7 @@ def draw_board(board):
 ```
 In this part of code, is the proses of arranging numbers which is player entered. (Classic UI).
 And also for addressing states which will be used for algorithm
+</br></br></br></br>
 ```
 def ask_number():
     global num , piece 
@@ -242,6 +256,7 @@ def ask_number():
     return piece , num
 ```
 In this part of code, is the proses of entering numbers which is player entered.
+</br></br></br></br>
 ```
 
 zero(matrix)
@@ -265,3 +280,4 @@ while game_on:
             print('illegal move , try again ')
 ```
 The drawing proccess of the matrix, including the ask_number function start.
+</br></br></br></br>
